@@ -58,6 +58,13 @@ foreign import ccall unsafe "assert_eq_i64" assert_eq_i64 :: Int -> Int -> IO ()
 
 foreign import ccall unsafe "print_f64" print_f64 :: Double -> IO ()
 
+main' :: IO ()
+main' = do
+  performGC
+  print_i64 $ fib 1
+  performGC
+
+
 main :: IO ()
 main = do
 
